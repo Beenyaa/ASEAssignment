@@ -1,0 +1,10 @@
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\bin\Debug\TurtleLanguageEnvironment.exe.config
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\bin\Debug\TurtleLanguageEnvironment.exe
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\bin\Debug\TurtleLanguageEnvironment.pdb
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.csprojAssemblyReference.cache
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.Properties.Resources.resources
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.csproj.GenerateResource.cache
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.csproj.CoreCompileInputs.cache
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.exe
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.pdb
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.Form1.resources

@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.canvas = new System.Windows.Forms.PictureBox();
+            this.outputCanvas = new System.Windows.Forms.PictureBox();
             this.codeBox = new System.Windows.Forms.RichTextBox();
             this.commandLine = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outputCanvas)).BeginInit();
             this.SuspendLayout();
             // 
-            // canvas
+            // outputCanvas
             // 
-            this.canvas.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.canvas.Location = new System.Drawing.Point(401, 13);
-            this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(387, 425);
-            this.canvas.TabIndex = 0;
-            this.canvas.TabStop = false;
+            this.outputCanvas.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.outputCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.outputCanvas.Location = new System.Drawing.Point(401, 13);
+            this.outputCanvas.Name = "outputCanvas";
+            this.outputCanvas.Size = new System.Drawing.Size(387, 425);
+            this.outputCanvas.TabIndex = 0;
+            this.outputCanvas.TabStop = false;
+            this.outputCanvas.Paint += this.outputCanvas_Paint;
             // 
             // codeBox
             // 
@@ -67,18 +68,23 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.commandLine);
             this.Controls.Add(this.codeBox);
-            this.Controls.Add(this.canvas);
+            this.Controls.Add(this.outputCanvas);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outputCanvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private void OutputCanvas_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
 
-        private System.Windows.Forms.PictureBox canvas;
+        private System.Windows.Forms.PictureBox outputCanvas;
         private System.Windows.Forms.RichTextBox codeBox;
         private System.Windows.Forms.TextBox commandLine;
     }
