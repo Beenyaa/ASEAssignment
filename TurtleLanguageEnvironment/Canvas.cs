@@ -17,6 +17,7 @@ namespace TurtleLanguageEnvironment
         public Canvas(Graphics graphics)
         {
             this.graphics = graphics;
+            this.graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             xPos = yPos = 0;
             pen = new Pen(Color.Black, 1);
         }

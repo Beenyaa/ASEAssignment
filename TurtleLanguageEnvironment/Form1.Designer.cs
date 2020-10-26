@@ -43,7 +43,7 @@
             this.outputCanvas.Size = new System.Drawing.Size(387, 425);
             this.outputCanvas.TabIndex = 0;
             this.outputCanvas.TabStop = false;
-            this.outputCanvas.Paint += this.outputCanvas_Paint;
+            this.outputCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.outputCanvas_Paint);
             // 
             // codeBox
             // 
@@ -59,6 +59,7 @@
             this.commandLine.Name = "commandLine";
             this.commandLine.Size = new System.Drawing.Size(361, 20);
             this.commandLine.TabIndex = 2;
+            this.commandLine.Text = " ";
             this.commandLine.KeyDown += new System.Windows.Forms.KeyEventHandler(this.commandLine_KeyDown);
             // 
             // Form1
@@ -75,11 +76,6 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void OutputCanvas_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
-        {
-            throw new System.NotImplementedException();
         }
 
         #endregion

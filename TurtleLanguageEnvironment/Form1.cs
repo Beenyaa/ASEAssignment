@@ -30,8 +30,13 @@ namespace TurtleLanguageEnvironment
 
                 if (command.Equals("line") == true)
                 {
-                    myCanvas.DrawLine(160, 120);
+                    Console.WriteLine("Line was drawn");
+                    myCanvas.DrawLine(260, 420);
                 }
+
+                commandLine.Text = "";
+                Refresh();
+
             }
         }
 
