@@ -12,33 +12,31 @@ namespace TurtleLanguageEnvironment
 {
     public partial class Form1 : Form
     {
-        Bitmap outputBitmap = new Bitmap(640, 480);
+        Commands myCommands;
         Canvas myCanvas;
+        Bitmap outputBitmap = new Bitmap(640, 480);
         public Form1()
         {
             InitializeComponent();
             myCanvas = new Canvas(Graphics.FromImage(outputBitmap));
+            myCommands = new Commands(myCanvas);
         }
 
         private void commandLine_KeyDown(object sender, KeyEventArgs e)
         {
+
             if (e.KeyCode == Keys.Enter)
             {
                 Console.WriteLine("Enter was pressed");
 
-                String command = commandLine.Text.Trim().ToLower();
+                String line = commandLine.Text;
+                myCommands.ParseCommands(line);
 
-                if (command.Equals("line") == true)
-                {
-                    Console.WriteLine("Line was drawn");
-                    myCanvas.DrawLine(260, 420);
-                }
-
-                commandLine.Text = "";
                 Refresh();
-
+                commandLine.Text = "";
             }
-        }
+
+         }
 
         private void outputCanvas_Paint(object sender, PaintEventArgs e)
         {
@@ -46,4 +44,5 @@ namespace TurtleLanguageEnvironment
             graphics.DrawImageUnscaled(outputBitmap, 0, 0);
         }
     }
+
 }
