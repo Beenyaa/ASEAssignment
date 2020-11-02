@@ -20,6 +20,7 @@ namespace TurtleLanguageEnvironment
             InitializeComponent();
             myCanvas = new Canvas(Graphics.FromImage(outputBitmap));
             myCommands = new Commands(myCanvas);
+
         }
 
         private void commandLine_KeyDown(object sender, KeyEventArgs e)
@@ -42,6 +43,11 @@ namespace TurtleLanguageEnvironment
         {
             Graphics graphics = e.Graphics;
             graphics.DrawImageUnscaled(outputBitmap, 0, 0);
+        }
+
+        private void saveImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

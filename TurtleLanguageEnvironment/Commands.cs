@@ -12,13 +12,14 @@ namespace TurtleLanguageEnvironment
     {
         String[] splitLine;
         String command;
-        String[] parameters;
+        String[] strParams;
         Canvas myCanvas;
-        int param1, param2;
+        int[] intParams;
 
         public Commands(Canvas passedCanvas)
         {
             this.myCanvas = passedCanvas;
+            intParams = new int[2];
         }
 
         public void ParseCommands(String line)
@@ -30,9 +31,23 @@ namespace TurtleLanguageEnvironment
             command = splitLine[0];
             if (splitLine.Length > 1)
             {
-                parameters = splitLine[1].Split(',');
-                param1 = int.Parse(parameters[0]);
-                param2 = int.Parse(parameters[1]);
+                strParams = splitLine[1].Split(',');
+                for (int i = 0 ; i < strParams.Length; i++)
+                {
+                    intParams[i] = int.Parse(strParams[i]);
+                }
+            }
+
+            if (command.Equals("clear") == true)
+            {
+                Console.WriteLine("Canvas cleared");
+                myCanvas.ClearCanvas();
+            }
+
+            if (command.Equals("moveto") == true)
+            {
+                Console.WriteLine("Turtle travelled");
+                myCanvas.MoveTo(intParams[0], intParams[1]);
             }
 
             if (command.Equals("penup") == true)
@@ -49,40 +64,35 @@ namespace TurtleLanguageEnvironment
 
             if (myCanvas.IsDrawing() == true)
             {
-                if (command.Equals("moveto") == true)
-                {
-                    Console.WriteLine("turtle travelled");
-                    myCanvas.MoveTo(param1, param2);
-                }
 
                 if (command.Equals("drawto") == true)
                 {
                     Console.WriteLine("Line was drawn");
-                    myCanvas.DrawLine(param1, param2);
+                    myCanvas.DrawLine(intParams[0], intParams[1]);
                 }
 
                 if (command.Equals("square") == true)
                 {
                     Console.WriteLine("Square was drawn");
-                    myCanvas.DrawSquare(param1);
+                    myCanvas.DrawSquare(intParams[0]);
                 }
 
                 if (command.Equals("rectangle") == true)
                 {
                     Console.WriteLine("Rectangle was drawn");
-                    myCanvas.DrawRectangle(param1, param2);
+                    myCanvas.DrawRectangle(intParams[0], intParams[1]);
                 }
 
                 if (command.Equals("circle") == true)
                 {
                     Console.WriteLine("Circle was drawn");
-                    myCanvas.DrawCircle(param1);
+                    myCanvas.DrawCircle(intParams[0]);
                 }
 
                 if (command.Equals("triangle") == true)
                 {
                     Console.WriteLine("Triangle was drawn");
-                    myCanvas.DrawTriangle(param2);
+                    myCanvas.DrawTriangle(intParams[0]);
                 }
 
             }

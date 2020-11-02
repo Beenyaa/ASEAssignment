@@ -28,6 +28,10 @@ namespace TurtleLanguageEnvironment
             pen = new Pen(Color.Black, 1);
             brush = new SolidBrush(Color.Black);
         }
+        public void ClearCanvas()
+        {
+            graphics.Clear(Color.White);
+        }
         public void ResetPos()
         {
             xPos = yPos = 0;
@@ -93,6 +97,11 @@ namespace TurtleLanguageEnvironment
         public bool IsDrawing()
         {
             return penDrawingsStatus;
+        }
+
+        private void Turtle()
+        {
+            graphics.DrawEllipse(new Pen(Color.LimeGreen, 1), xPos, yPos, 2, 2);
         }
     }
 }
