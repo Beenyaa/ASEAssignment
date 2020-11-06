@@ -103,5 +103,12 @@ namespace TurtleLanguageEnvironment
         {
             graphics.DrawEllipse(new Pen(Color.LimeGreen, 1), xPos, yPos, 2, 2);
         }
+
+        public void PenColour(Color penColour)
+        {
+            pen.Color = penColour;
+            brush.Color = penColour;
+        }
+        
     }
 }

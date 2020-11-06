@@ -35,17 +35,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.outputCanvas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -102,31 +101,59 @@
             // imageToolStripMenuItem
             // 
             this.imageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveImageToolStripMenuItem,
-            this.loadImageToolStripMenuItem,
-            this.saveIToolStripMenuItem});
+            this.newImageToolStripMenuItem,
+            this.saveImageToolStripMenuItem});
             this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
-            this.imageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.imageToolStripMenuItem.Text = "Image";
+            // 
+            // newImageToolStripMenuItem
+            // 
+            this.newImageToolStripMenuItem.Name = "newImageToolStripMenuItem";
+            this.newImageToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.newImageToolStripMenuItem.Text = "New Image";
+            this.newImageToolStripMenuItem.Click += new System.EventHandler(this.newImageToolStripMenuItem_Click);
             // 
             // saveImageToolStripMenuItem
             // 
             this.saveImageToolStripMenuItem.Name = "saveImageToolStripMenuItem";
-            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveImageToolStripMenuItem.Text = "New Image";
+            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.saveImageToolStripMenuItem.Text = "Save Image";
             this.saveImageToolStripMenuItem.Click += new System.EventHandler(this.saveImageToolStripMenuItem_Click);
             // 
-            // loadImageToolStripMenuItem
+            // programToolStripMenuItem
             // 
-            this.loadImageToolStripMenuItem.Name = "loadImageToolStripMenuItem";
-            this.loadImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loadImageToolStripMenuItem.Text = "Load Image";
+            this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newCodeToolStripMenuItem,
+            this.saveCodeToolStripMenuItem,
+            this.loadCodeToolStripMenuItem});
+            this.programToolStripMenuItem.Name = "programToolStripMenuItem";
+            this.programToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.programToolStripMenuItem.Text = "Turtle Code";
             // 
-            // saveIToolStripMenuItem
+            // newCodeToolStripMenuItem
             // 
-            this.saveIToolStripMenuItem.Name = "saveIToolStripMenuItem";
-            this.saveIToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveIToolStripMenuItem.Text = "Save Image";
+            this.newCodeToolStripMenuItem.Name = "newCodeToolStripMenuItem";
+            this.newCodeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.newCodeToolStripMenuItem.Text = "New Code";
+            // 
+            // saveCodeToolStripMenuItem
+            // 
+            this.saveCodeToolStripMenuItem.Name = "saveCodeToolStripMenuItem";
+            this.saveCodeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.saveCodeToolStripMenuItem.Text = "Save Code";
+            // 
+            // loadCodeToolStripMenuItem
+            // 
+            this.loadCodeToolStripMenuItem.Name = "loadCodeToolStripMenuItem";
+            this.loadCodeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.loadCodeToolStripMenuItem.Text = "Load Code";
+            // 
+            // closeProgramToolStripMenuItem
+            // 
+            this.closeProgramToolStripMenuItem.Name = "closeProgramToolStripMenuItem";
+            this.closeProgramToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeProgramToolStripMenuItem.Text = "Close Program";
             // 
             // aboutToolStripMenuItem
             // 
@@ -140,48 +167,14 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // informationToolStripMenuItem
             // 
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.informationToolStripMenuItem.Text = "Information";
-            // 
-            // programToolStripMenuItem
-            // 
-            this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newCodeToolStripMenuItem,
-            this.saveCodeToolStripMenuItem,
-            this.loadCodeToolStripMenuItem});
-            this.programToolStripMenuItem.Name = "programToolStripMenuItem";
-            this.programToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.programToolStripMenuItem.Text = "Turtle Code";
-            // 
-            // closeProgramToolStripMenuItem
-            // 
-            this.closeProgramToolStripMenuItem.Name = "closeProgramToolStripMenuItem";
-            this.closeProgramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.closeProgramToolStripMenuItem.Text = "Close Program";
-            // 
-            // newCodeToolStripMenuItem
-            // 
-            this.newCodeToolStripMenuItem.Name = "newCodeToolStripMenuItem";
-            this.newCodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newCodeToolStripMenuItem.Text = "New Code";
-            // 
-            // saveCodeToolStripMenuItem
-            // 
-            this.saveCodeToolStripMenuItem.Name = "saveCodeToolStripMenuItem";
-            this.saveCodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveCodeToolStripMenuItem.Text = "Save Code";
-            // 
-            // loadCodeToolStripMenuItem
-            // 
-            this.loadCodeToolStripMenuItem.Name = "loadCodeToolStripMenuItem";
-            this.loadCodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loadCodeToolStripMenuItem.Text = "Load Code";
             // 
             // Form1
             // 
@@ -195,7 +188,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Turtle Language Paint";
+            this.Text = "Turtle Graphics";
             ((System.ComponentModel.ISupportInitialize)(this.outputCanvas)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -212,9 +205,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveImageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadImageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem programToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newCodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCodeToolStripMenuItem;
@@ -223,6 +214,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveImageToolStripMenuItem;
     }
 }
 

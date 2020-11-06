@@ -20,6 +20,7 @@ namespace TurtleLanguageEnvironment
         {
             this.myCanvas = passedCanvas;
             intParams = new int[2];
+
         }
 
         public void ParseCommands(String line)
@@ -32,9 +33,30 @@ namespace TurtleLanguageEnvironment
             if (splitLine.Length > 1)
             {
                 strParams = splitLine[1].Split(',');
-                for (int i = 0 ; i < strParams.Length; i++)
+
+                if (int.Parse(strParams[0]).GetType() == typeof(int))
+                { 
+                    for (int i = 0 ; i < strParams.Length; i++)
+                    {
+                        intParams[i] = int.Parse(strParams[i]);
+                    }
+                }
+            }
+
+            if (command.Equals("color") == true || command.Equals("colour") == true)
+            {
+                Console.WriteLine("Colour was changed");
+                if (strParams[0].Equals("red"))
                 {
-                    intParams[i] = int.Parse(strParams[i]);
+                    myCanvas.PenColour(Color.Red);
+                }
+                if (strParams[0].Equals("green"))
+                {
+                    myCanvas.PenColour(Color.DarkGreen);
+                }
+                if (strParams[0].Equals("blue"))
+                {
+                    myCanvas.PenColour(Color.Blue);
                 }
             }
 
@@ -94,6 +116,7 @@ namespace TurtleLanguageEnvironment
                     Console.WriteLine("Triangle was drawn");
                     myCanvas.DrawTriangle(intParams[0]);
                 }
+
 
             }
 
