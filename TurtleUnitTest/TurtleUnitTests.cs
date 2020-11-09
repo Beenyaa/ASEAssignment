@@ -22,6 +22,7 @@ namespace TurtleUnitTest
 
         }
 
+        /// <summary>Defines the test method TestParseCommadMoveToInvalid.</summary>
         [TestMethod]
         public void TestParseCommadMoveToInvalid()
         {
@@ -43,6 +44,7 @@ namespace TurtleUnitTest
             Assert.AreEqual("Missing parameter at line: " + "command line", s);
         }
 
+        /// <summary>Defines the test method TestParseCommadNonNumericParam.</summary>
         [TestMethod]
         public void TestParseCommadNonNumericParam()
         {
@@ -55,7 +57,7 @@ namespace TurtleUnitTest
                 p.ParseCommands("moveto hundred,100", "command line", eh);
             }
 
-            catch (ArgumentNullException ex)
+            catch (ArgumentException ex)
             {
                 s = ex.Message;
             }

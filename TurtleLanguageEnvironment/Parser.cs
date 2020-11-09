@@ -240,7 +240,6 @@ namespace TurtleLanguageEnvironment
                 Console.WriteLine(errorHandler.GetErrorList()[0]);
             }
 
-
         }
     }
 }
