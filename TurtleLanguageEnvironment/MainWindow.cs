@@ -58,7 +58,7 @@ namespace TurtleLanguageEnvironment
                             int lineNumber = 1;
                             while ((line = reader.ReadLine()) != null)
                             {
-                                myCommands.ParseCommands(line, lineNumber, errorHandler);
+                                myCommands.ParseCommands(line, lineNumber.ToString(), errorHandler);
                                 lineNumber++;
                             }
 
@@ -69,7 +69,7 @@ namespace TurtleLanguageEnvironment
                     // Handles command line commands
                     else
                     {
-                        myCommands.ParseCommands(cmdLine, 0, errorHandler);
+                        myCommands.ParseCommands(cmdLine, "command line", errorHandler);
                     }
                     Refresh();
                     commandLine.Text = "";

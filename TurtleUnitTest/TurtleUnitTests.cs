@@ -9,15 +9,14 @@ namespace TurtleUnitTest
     public class TurtleTests
     {
 
-        Canvas c = new Canvas();
-
         /// <summary>Defines the test method TestParseCommadMoveToValid.</summary>
         [TestMethod]
         public void TestParseCommadMoveToValid()
         {
+            Canvas c = new Canvas();
             Parser p = new Parser(c);
             ErrorHandler eh = new ErrorHandler();
-            p.ParseCommands("moveto 100,200", 0, eh);
+            p.ParseCommands("moveto 100,200", "command line", eh);
             Assert.AreEqual(100, c.GetX(), 0.01);
             Assert.AreEqual(200, c.GetY(), 0.01);
 
@@ -26,12 +25,43 @@ namespace TurtleUnitTest
         [TestMethod]
         public void TestParseCommadMoveToInvalid()
         {
+            Canvas c = new Canvas();
             Parser p = new Parser(c);
             ErrorHandler eh = new ErrorHandler();
-            p.ParseCommands("moveto hundred,twohundred", 0, eh);
-            Assert.AreNotEqual("hundred", c.GetX());
-            Assert.AreNotEqual("twohundred", c.GetY());
+            String s = "";
+            try
+            {
+                p.ParseCommands("moveto 100", "command line", eh);
+            }
 
+            catch (ArgumentNullException ex)
+            {
+                s = ex.Message;
+            }
+
+            Assert.AreNotEqual("hundred", c.GetX());
+            Assert.AreEqual("Missing parameter at line: " + "command line", s);
+        }
+
+        [TestMethod]
+        public void TestParseCommadNonNumericParam()
+        {
+            Canvas c = new Canvas();
+            Parser p = new Parser(c);
+            ErrorHandler eh = new ErrorHandler();
+            String s = "";
+            try
+            {
+                p.ParseCommands("moveto hundred,100", "command line", eh);
+            }
+
+            catch (ArgumentNullException ex)
+            {
+                s = ex.Message;
+            }
+
+            Assert.AreNotEqual("hundred", c.GetX());
+            Assert.AreEqual("Invalid parameter at line: " + "command line", s);
         }
     }
 }

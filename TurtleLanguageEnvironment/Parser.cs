@@ -23,13 +23,14 @@ namespace TurtleLanguageEnvironment
         public Parser(Canvas passedCanvas)
         {
             this.myCanvas = passedCanvas;
+            parameters = new String[] { };
             
 
         }
 
         /// <summary>Parses the commands.</summary>
         /// <param name="line">The line.</param>
-        public void ParseCommands(String line, int lineNumber, ErrorHandler errorHandler)
+        public void ParseCommands(String line, String lineNumber, ErrorHandler errorHandler)
         {
             try
             {
@@ -87,7 +88,7 @@ namespace TurtleLanguageEnvironment
                 else if (command.Equals("moveto") == true)
                 {
                     Console.WriteLine("Turtle travelled");
-                    if (parameters[0].Equals(null) || parameters[1].Equals(null))
+                    if (parameters.Length != 2)
                     {
                         throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
                     }
@@ -138,7 +139,7 @@ namespace TurtleLanguageEnvironment
                     if (command.Equals("drawto") == true)
                     {
                         Console.WriteLine("Line was drawn");
-                        if (parameters[0].Equals(null) || parameters[1].Equals(null))
+                        if (parameters.Length != 2)
                         {
                             throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
                         }
@@ -156,7 +157,7 @@ namespace TurtleLanguageEnvironment
                     if (command.Equals("square") == true)
                     {
                         Console.WriteLine("Square was drawn");
-                        if (parameters[0].Equals(null))
+                        if (parameters.Length != 1)
                         {
                             throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
                         }
@@ -174,7 +175,7 @@ namespace TurtleLanguageEnvironment
                     if (command.Equals("rectangle") == true)
                     {
                         Console.WriteLine("Rectangle was drawn");
-                        if (parameters[0].Equals(null)||parameters[1].Equals(null))
+                        if (parameters.Length != 2)
                         {
                             throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
                         }
@@ -192,7 +193,7 @@ namespace TurtleLanguageEnvironment
                     if (command.Equals("circle") == true)
                     {
                         Console.WriteLine("Circle was drawn");
-                        if (parameters[0].Equals(null))
+                        if (parameters.Length != 1)
                         {
                             throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
                         }
@@ -210,7 +211,7 @@ namespace TurtleLanguageEnvironment
                     if (command.Equals("triangle") == true)
                     {
                         Console.WriteLine("Triangle was drawn");
-                        if (parameters[0].Equals(null))
+                        if (parameters.Length != 1)
                         {
                             throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
                         }
