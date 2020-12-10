@@ -21,7 +21,6 @@ namespace TurtleLanguageEnvironment
         Bitmap outputBitmap;
 
         /// <summary>Initializes a new instance of the <see cref="T:TurtleLanguageEnvironment.Canvas" /> class.</summary>
-        /// <param name="graphics">The graphics.</param>
         public Canvas()
         {
 

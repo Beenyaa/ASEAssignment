@@ -47,6 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Canvas.cs" />
+    <Compile Include="commands\Factory.cs" />
+    <Compile Include="commands\logicOperators\ForLoop.cs" />
+    <Compile Include="commands\logicOperators\IfStatement.cs" />
+    <Compile Include="commands\logicOperators\Variable.cs" />
+    <Compile Include="commands\logicOperators\WhileLoop.cs" />
     <Compile Include="ErrorHandler.cs" />
     <Compile Include="ErrorPopup.cs">
       <SubType>Form</SubType>
@@ -54,7 +59,7 @@
     <Compile Include="ErrorPopup.Designer.cs">
       <DependentUpon>ErrorPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Parser.cs" />
+    <Compile Include="commands\Parser.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,5 +101,6 @@
     <Content Include="turtle_logo.ico" />
     <Content Include="turtle_logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

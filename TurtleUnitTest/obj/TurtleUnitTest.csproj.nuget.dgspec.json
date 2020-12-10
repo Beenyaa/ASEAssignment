@@ -36,6 +36,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "C:\\Users\\bence\\source\\repos\\TurtleLanguageEnvironment\\TurtleLanguageEnvironment\\TurtleLanguageEnvironment.csproj": {
                 "projectPath": "C:\\Users\\bence\\source\\repos\\TurtleLanguageEnvironment\\TurtleLanguageEnvironment\\TurtleLanguageEnvironment.csproj"
@@ -51,6 +52,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
@@ -84,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
