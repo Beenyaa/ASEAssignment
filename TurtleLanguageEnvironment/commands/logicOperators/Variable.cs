@@ -6,27 +6,76 @@ using System.Threading.Tasks;
 
 namespace TurtleLanguageEnvironment.commands.logicOperators
 {
+    /// <summary>
+    /// The class intended for variable creation
+    /// </summary>
     class Variable
     {
-        private String name;
-        private String value;
-
-        public Variable(String name, String value)
+        private string name;
+        private string value;
+        private string operation;
+        /// <summary>
+        /// Gets the value
+        /// </summary>
+        /// <returns>Returns the variables value</returns>
+        public string GetValue()
         {
-            this.name = name;
-            this.value = value;
+            return value;
         }
 
-        public String Name
+        /// <summary>
+        /// Sets the vairables value
+        /// </summary>
+        /// <param name="operand">The value to be stored in the variable</param>
+        public void SetValue(string operand)
         {
-            get { return name; }
-            set { this.name = value; }
+            value = operand;
         }
 
-        public String Value
+        /// <summary>
+        /// Gets the name of the variable
+        /// </summary>
+        /// <returns>Sets the variable</returns>
+        public string GetName()
         {
-            get { return value; }
-            set { this.value = value; }
+            return name;
         }
+        /// <summary>
+        /// Sets the variables name
+        /// </summary>
+        /// <param name="operand">The name for the variable. </param>
+        public void SetName(string operand)
+        {
+            name = operand;
+        }
+
+        /// <summary>
+        /// Sets the mathematical operation to be performed on the variable values
+        /// </summary>
+        /// <param name="op">Sets the mathematical operation (=, +=, -=)</param>
+        public void setOperation(string op) { operation = op; }
+        /// <summary>
+        /// Runs the mathematical equation on the variable value
+        /// </summary>
+        public void runEquation(string tempValue)
+        {
+            int tempMaths;
+            switch (operation)
+            {
+                case "=":
+                    SetValue(tempValue);
+                    break;
+                case "-=":
+                    tempMaths = int.Parse(GetValue()) - int.Parse(tempValue);
+                    SetValue(tempMaths.ToString());
+                    break;
+                case "+=":
+                    tempMaths = int.Parse(GetValue()) + int.Parse(tempValue);
+                    SetValue(tempMaths.ToString());
+                    break;
+            }
+                
+        }
+
     }
 }

@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TurtleLanguageEnvironment</name>
+    </assembly>
+    <members>
+        <member name="T:TurtleLanguageEnvironment.Canvas">
+            <summary>Class Canvas.</summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TurtleLanguageEnvironment.Canvas" /> class.</summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.ClearCanvas">
+            <summary>Clears the canvas.</summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.ResetPos">
+            <summary>Resets the position.</summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.MoveTo(System.Int32,System.Int32)">
+            <summary>Moves to.</summary>
+            <param name="toX">To x.</param>
+            <param name="toY">To y.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.DrawLine(System.Int32,System.Int32)">
+            <summary>Draws the line.</summary>
+            <param name="toX">To x.</param>
+            <param name="toY">To y.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.DrawSquare(System.Int32)">
+            <summary>Draws the square.</summary>
+            <param name="width">The width.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.DrawRectangle(System.Int32,System.Int32)">
+            <summary>Draws the rectangle.</summary>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.DrawCircle(System.Int32)">
+            <summary>Draws the circle.</summary>
+            <param name="radius">The radius.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.DrawTriangle(System.Int32)">
+            <summary>Draws the triangle.</summary>
+            <param name="length">The length.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.DisposePen">
+            <summary>Disposes the pen.</summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.CallPen">
+            <summary>Calls the pen.</summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.IsDrawing">
+            <summary>Determines whether this instance is drawing.</summary>
+            <returns>
+              <c>true</c> if this instance is drawing; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.SetFill(System.Boolean)">
+            <summary>Sets the fill.</summary>
+            <param name="onOrOff">if set to <c>true</c> [on or off].</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.PenColour(System.Drawing.Color)">
+            <summary>Pens the colour.</summary>
+            <param name="penColour">The pen colour.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.GetX">
+            <summary>Gets the x.</summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Canvas.GetY">
+            <summary>Gets the y.</summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="T:TurtleLanguageEnvironment.commands.Factory">
+            <summary>
+            A factory class for creating logic
+            </summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.Factory.createIf(System.String,System.String,System.String)">
+            <summary>
+            Intended to create an if statement
+            </summary>
+            <param name="logic">The type of logic to be peformed on the two values</param>
+            <param name="firstParam">the first value to be checked</param>
+            <param name="secondParam">The second value to be checked.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.Factory.createDef(System.String,System.String,System.String)">
+            <summary>
+            Intended to create a function
+            </summary>
+            <param name="logic">The type of logic to be peformed on the two values</param>
+            <param name="firstParam">the first value to be checked</param>
+            <param name="secondParam">The second value to be checked.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.Factory.createVar(System.String,System.String,System.String)">
+            <summary>
+            Intended to create a variable
+            </summary>
+            <param name="logic">The type of logic to be peformed on the two values</param>
+            <param name="firstParam">the first value to be checked</param>
+            <param name="secondParam">The second value to be checked.</param>
+            <returns></returns>
+        </member>
+        <member name="T:TurtleLanguageEnvironment.commands.logicOperators.Compiler">
+            <summary>
+            This class is intendeds to expand on the scripting capabilities of Part 1's features by giving the user the ability to use
+            more programming logic usages such as the ability to make variables, methods, if statements and loops (both while and for loops).
+            </summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Compiler.getCompiledCode(System.String[])">
+            <summary>
+            This method generates the compiled code. In a practical use, the compiled code generated by this method is code that turns all the logic into understable code for the Parser class.
+            </summary>
+            <param name="lines"> The Lines variable is an array of the user's input line by line. It contains logic (e.g ifs and loops) </param>
+            <returns>This returns a compiled version of the user typed program that turns the logic to understandable commands by part 1's parser.</returns>
+        </member>
+        <member name="T:TurtleLanguageEnvironment.commands.logicOperators.IfStatement">
+            <summary>
+            Contains the logic for if statements.
+            </summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.IfStatement.setFirstValue(System.String)">
+            <summary>
+            Sets the first value in the equation
+            </summary>
+            <param name="first">The first value</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.IfStatement.setSecondValue(System.String)">
+            <summary>
+            Sets the second value in the equation
+            </summary>
+            <param name="second">The second value</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:TurtleLanguageEnvironment.commands.logicOperators.IfStatement.setOperation(System.String)" -->
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.IfStatement.checkStatement">
+            <summary>
+            Checks the logical statement
+            </summary>
+            <returns>Returns ture of false depending on the outcome of the check.</returns>
+        </member>
+        <member name="T:TurtleLanguageEnvironment.commands.logicOperators.Method">
+            <summary>
+            This contains the method logic.
+            </summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Method.GetPointer">
+            <summary>
+            Gets the pointer from memory.
+            </summary>
+            <returns>The pointer for the start of the function.</returns>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Method.SetPointer(System.Int32)">
+            <summary>
+            Allows the user to set the pointer
+            </summary>
+            <param name="operand">The line for the start of the function</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Method.GetName">
+            <summary>
+            Gets the name of the function from memory
+            </summary>
+            <returns>Returns the functions name</returns>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Method.SetName(System.String)">
+            <summary>
+            Sets the name of the method
+            </summary>
+            <param name="operand">The methods name.</param>
+        </member>
+        <member name="T:TurtleLanguageEnvironment.commands.logicOperators.Variable">
+            <summary>
+            The class intended for variable creation
+            </summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.GetValue">
+            <summary>
+            Gets the value
+            </summary>
+            <returns>Returns the variables value</returns>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.SetValue(System.String)">
+            <summary>
+            Sets the vairables value
+            </summary>
+            <param name="operand">The value to be stored in the variable</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.GetName">
+            <summary>
+            Gets the name of the variable
+            </summary>
+            <returns>Sets the variable</returns>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.SetName(System.String)">
+            <summary>
+            Sets the variables name
+            </summary>
+            <param name="operand">The name for the variable. </param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.setOperation(System.String)">
+            <summary>
+            Sets the mathematical operation to be performed on the variable values
+            </summary>
+            <param name="op">Sets the mathematical operation (=, +=, -=)</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.runEquation(System.String)">
+            <summary>
+            Runs the mathematical equation on the variable value
+            </summary>
+        </member>
+        <member name="F:TurtleLanguageEnvironment.ErrorPopup.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.ErrorPopup.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.ErrorPopup.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:TurtleLanguageEnvironment.Parser">
+            <summary>Class Parser.</summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Parser.#ctor(TurtleLanguageEnvironment.Canvas)">
+            <summary>Initializes a new instance of the <see cref="T:TurtleLanguageEnvironment.Parser" /> class.</summary>
+            <param name="passedCanvas">The passed canvas.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Parser.ParseCommands(System.String,System.String,TurtleLanguageEnvironment.ErrorHandler)">
+            <summary>Parses the commands.</summary>
+            <param name="line">The line.</param>
+        </member>
+        <member name="T:TurtleLanguageEnvironment.MainWindow">
+            <summary>Class Form1.
+            Implements the <see cref="T:System.Windows.Forms.Form" /></summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TurtleLanguageEnvironment.Form1" /> class.</summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.commandLine_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>Handles the KeyDown event of the commandLine control.</summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.KeyEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.outputCanvas_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>Handles the Paint event of the outputCanvas control.</summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.PaintEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.newImageToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>Handles the Click event of the newImageToolStripMenuItem control.</summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.saveImageToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>Handles the Click event of the saveImageToolStripMenuItem control.</summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.closeProgramToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>Handles the Click event of the closeProgramToolStripMenuItem control.</summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.newCodeToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>Handles the Click event of the newCodeToolStripMenuItem control.</summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.saveCodeToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>Handles the Click event of the saveCodeToolStripMenuItem control.</summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.loadCodeToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>Handles the Click event of the loadCodeToolStripMenuItem control.</summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="F:TurtleLanguageEnvironment.MainWindow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.MainWindow.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:TurtleLanguageEnvironment.Turtle">
+            <summary>Class Turtle.</summary>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Turtle.#ctor(System.Drawing.Graphics)">
+            <summary>Initializes a new instance of the <see cref="T:TurtleLanguageEnvironment.Turtle" /> class.</summary>
+            <param name="graphics">The graphics.</param>
+        </member>
+        <member name="M:TurtleLanguageEnvironment.Turtle.Wake(System.Int32,System.Int32)">
+            <summary>Wakes the turtle at specified current x and y positions.</summary>
+            <param name="currentX">The current x.</param>
+            <param name="currentY">The current y.</param>
+        </member>
+        <member name="T:TurtleLanguageEnvironment.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:TurtleLanguageEnvironment.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:TurtleLanguageEnvironment.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

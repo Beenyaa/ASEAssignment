@@ -23,6 +23,7 @@ namespace TurtleLanguageEnvironment
         SaveFileDialog saveFileDialog;
         OpenFileDialog openFileDialog;
         ErrorHandler errorHandler;
+        commands.logicOperators.Compiler compiler;
         /// <summary>Initializes a new instance of the <see cref="T:TurtleLanguageEnvironment.Form1" /> class.</summary>
         public MainWindow()
         {
@@ -34,6 +35,7 @@ namespace TurtleLanguageEnvironment
             myCommands = new Parser(myCanvas);
             turtleBitmap = new Bitmap(outputCanvas.Width, outputCanvas.Height);
             turtle = new Turtle(Graphics.FromImage(turtleBitmap));
+            compiler = new commands.logicOperators.Compiler();
         }
 
         /// <summary>Handles the KeyDown event of the commandLine control.</summary>
@@ -52,18 +54,15 @@ namespace TurtleLanguageEnvironment
                     // Handles code box commands
                     if (cmdLine.Equals("run"))
                     {
-                        using (StringReader reader = new StringReader(codeBox.Text))
+                        List<String> compiledCode = compiler.getCompiledCode(codeBox.Text.Split('\n'));
+
+                        int lineNumber = 1;
+                        foreach (String line in compiledCode)
                         {
-                            string line;
-                            int lineNumber = 1;
-                            while ((line = reader.ReadLine()) != null)
-                            {
-                                myCommands.ParseCommands(line, lineNumber.ToString(), errorHandler);
-                                lineNumber++;
-                            }
-
-
+                            myCommands.ParseCommands(line, lineNumber.ToString(), errorHandler);
+                            lineNumber++;
                         }
+             
                     }
 
                     // Handles command line commands

@@ -9,3 +9,4 @@ C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\
 C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.pdb
 C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.ErrorPopup.resources
 C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\obj\Debug\TurtleLanguageEnvironment.MainWindow.resources
+C:\Users\bence\source\repos\TurtleLanguageEnvironment\TurtleLanguageEnvironment\bin\Debug\TurtleLanguageEnvironment.xml

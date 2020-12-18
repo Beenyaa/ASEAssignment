@@ -21,7 +21,8 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>bin\Debug\TurtleLanguageEnvironment.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,10 +49,10 @@
   <ItemGroup>
     <Compile Include="Canvas.cs" />
     <Compile Include="commands\Factory.cs" />
-    <Compile Include="commands\logicOperators\ForLoop.cs" />
+    <Compile Include="commands\logicOperators\Compiler.cs" />
     <Compile Include="commands\logicOperators\IfStatement.cs" />
+    <Compile Include="commands\logicOperators\Method.cs" />
     <Compile Include="commands\logicOperators\Variable.cs" />
-    <Compile Include="commands\logicOperators\WhileLoop.cs" />
     <Compile Include="ErrorHandler.cs" />
     <Compile Include="ErrorPopup.cs">
       <SubType>Form</SubType>

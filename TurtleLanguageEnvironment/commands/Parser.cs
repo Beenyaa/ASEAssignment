@@ -24,7 +24,7 @@ namespace TurtleLanguageEnvironment
         {
             this.myCanvas = passedCanvas;
             parameters = new String[] { };
-            
+
 
         }
 
@@ -34,6 +34,7 @@ namespace TurtleLanguageEnvironment
         {
             try
             {
+
                 line = line.ToLower().Trim();
                 splitLine = line.Split(' ');
 
@@ -87,7 +88,7 @@ namespace TurtleLanguageEnvironment
 
                 else if (command.Equals("moveto") == true)
                 {
-                    Console.WriteLine("Turtle travelled");
+                    Console.WriteLine("Turtle travelled, line: " + lineNumber);
                     if (parameters.Length != 2)
                     {
                         throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
@@ -138,7 +139,7 @@ namespace TurtleLanguageEnvironment
 
                     if (command.Equals("drawto") == true)
                     {
-                        Console.WriteLine("Line was drawn");
+                        Console.WriteLine("Line was drawn, line: " + lineNumber);
                         if (parameters.Length != 2)
                         {
                             throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
@@ -174,7 +175,7 @@ namespace TurtleLanguageEnvironment
 
                     if (command.Equals("rectangle") == true)
                     {
-                        Console.WriteLine("Rectangle was drawn");
+                        Console.WriteLine("Rectangle was drawn, line: " + lineNumber);
                         if (parameters.Length != 2)
                         {
                             throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
@@ -192,7 +193,7 @@ namespace TurtleLanguageEnvironment
 
                     if (command.Equals("circle") == true)
                     {
-                        Console.WriteLine("Circle was drawn");
+                        Console.WriteLine("Circle was drawn, line: " + lineNumber);
                         if (parameters.Length != 1)
                         {
                             throw new ArgumentNullException("Missing parameter at line: " + lineNumber);
