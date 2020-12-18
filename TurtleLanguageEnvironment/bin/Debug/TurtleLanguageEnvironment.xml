@@ -72,34 +72,31 @@
         </member>
         <member name="T:TurtleLanguageEnvironment.commands.Factory">
             <summary>
-            A factory class for creating logic
+            Class to create the program logic
             </summary>
         </member>
-        <member name="M:TurtleLanguageEnvironment.commands.Factory.createIf(System.String,System.String,System.String)">
+        <member name="M:TurtleLanguageEnvironment.commands.Factory.createIfStatement(System.String,System.String)">
             <summary>
-            Intended to create an if statement
+            Creates a nw If Statement
             </summary>
-            <param name="logic">The type of logic to be peformed on the two values</param>
-            <param name="firstParam">the first value to be checked</param>
-            <param name="secondParam">The second value to be checked.</param>
+            <param name="firstParam">the first value, the logical operation</param>
+            <param name="secondParam">The second value, the polished integer values.</param>
             <returns></returns>
         </member>
-        <member name="M:TurtleLanguageEnvironment.commands.Factory.createDef(System.String,System.String,System.String)">
+        <member name="M:TurtleLanguageEnvironment.commands.Factory.createMethod(System.String,System.String)">
             <summary>
-            Intended to create a function
+            Creates a new Method
             </summary>
-            <param name="logic">The type of logic to be peformed on the two values</param>
-            <param name="firstParam">the first value to be checked</param>
-            <param name="secondParam">The second value to be checked.</param>
+            <param name="name">the first value, the name</param>
+            <param name="pointer">The second value, the pointer.</param>
             <returns></returns>
         </member>
-        <member name="M:TurtleLanguageEnvironment.commands.Factory.createVar(System.String,System.String,System.String)">
+        <member name="M:TurtleLanguageEnvironment.commands.Factory.createVarariable(System.String,System.String)">
             <summary>
-            Intended to create a variable
+            Creates a new Variable
             </summary>
-            <param name="logic">The type of logic to be peformed on the two values</param>
-            <param name="firstParam">the first value to be checked</param>
-            <param name="secondParam">The second value to be checked.</param>
+            <param name="name">the first value, the name</param>
+            <param name="value">The second valu, the variable value.</param>
             <returns></returns>
         </member>
         <member name="T:TurtleLanguageEnvironment.commands.logicOperators.Compiler">
@@ -137,7 +134,7 @@
             <summary>
             Checks the logical statement
             </summary>
-            <returns>Returns ture of false depending on the outcome of the check.</returns>
+            <returns>Returns treu of false depending on the outcome of the logic comparison.</returns>
         </member>
         <member name="T:TurtleLanguageEnvironment.commands.logicOperators.Method">
             <summary>
@@ -152,50 +149,50 @@
         </member>
         <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Method.SetPointer(System.Int32)">
             <summary>
-            Allows the user to set the pointer
+            Sets the pointer
             </summary>
-            <param name="operand">The line for the start of the function</param>
+            <param name="tempPointer">The line for the start of the function</param>
         </member>
         <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Method.GetName">
             <summary>
-            Gets the name of the function from memory
+            Gets the name of the Method
             </summary>
-            <returns>Returns the functions name</returns>
+            <returns>Returns the Method name</returns>
         </member>
         <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Method.SetName(System.String)">
             <summary>
-            Sets the name of the method
+            Sets the name of the Method
             </summary>
-            <param name="operand">The methods name.</param>
+            <param name="tempName">The methods name.</param>
         </member>
         <member name="T:TurtleLanguageEnvironment.commands.logicOperators.Variable">
             <summary>
-            The class intended for variable creation
+            The class of a Variable
             </summary>
         </member>
         <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.GetValue">
             <summary>
-            Gets the value
+            Gets the variable value
             </summary>
-            <returns>Returns the variables value</returns>
+            <returns>Returns the variable value</returns>
         </member>
         <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.SetValue(System.String)">
             <summary>
-            Sets the vairables value
+            Sets the vairable value
             </summary>
-            <param name="operand">The value to be stored in the variable</param>
+            <param name="tempValue">The value to be stored in the variable</param>
         </member>
         <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.GetName">
             <summary>
             Gets the name of the variable
             </summary>
-            <returns>Sets the variable</returns>
+            <returns>Gets the variable</returns>
         </member>
         <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.SetName(System.String)">
             <summary>
-            Sets the variables name
+            Sets the variable name
             </summary>
-            <param name="operand">The name for the variable. </param>
+            <param name="tempName">The name for the variable. </param>
         </member>
         <member name="M:TurtleLanguageEnvironment.commands.logicOperators.Variable.setOperation(System.String)">
             <summary>

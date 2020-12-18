@@ -23,30 +23,30 @@ namespace TurtleLanguageEnvironment.commands.logicOperators
         }
 
         /// <summary>
-        /// Allows the user to set the pointer
+        /// Sets the pointer
         /// </summary>
-        /// <param name="operand">The line for the start of the function</param>
-        public void SetPointer(int operand)
+        /// <param name="tempPointer">The line for the start of the function</param>
+        public void SetPointer(int tempPointer)
         {
-            pointer = operand;
+            pointer = tempPointer;
         }
 
         /// <summary>
-        /// Gets the name of the function from memory
+        /// Gets the name of the Method
         /// </summary>
-        /// <returns>Returns the functions name</returns>
+        /// <returns>Returns the Method name</returns>
         public string GetName()
         {
             return name;
         }
 
         /// <summary>
-        /// Sets the name of the method
+        /// Sets the name of the Method
         /// </summary>
-        /// <param name="operand">The methods name.</param>
-        public void SetName(string operand)
+        /// <param name="tempName">The methods name.</param>
+        public void SetName(string tempName)
         {
-            name = operand;
+            name = tempName;
         }
     }
 }

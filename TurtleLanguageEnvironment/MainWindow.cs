@@ -24,6 +24,7 @@ namespace TurtleLanguageEnvironment
         OpenFileDialog openFileDialog;
         ErrorHandler errorHandler;
         commands.logicOperators.Compiler compiler;
+        List<String> compiledCode;
         /// <summary>Initializes a new instance of the <see cref="T:TurtleLanguageEnvironment.Form1" /> class.</summary>
         public MainWindow()
         {
@@ -54,7 +55,7 @@ namespace TurtleLanguageEnvironment
                     // Handles code box commands
                     if (cmdLine.Equals("run"))
                     {
-                        List<String> compiledCode = compiler.getCompiledCode(codeBox.Text.Split('\n'));
+                        compiledCode = compiler.getCompiledCode(codeBox.Text.Split('\n'));
 
                         int lineNumber = 1;
                         foreach (String line in compiledCode)
@@ -62,6 +63,8 @@ namespace TurtleLanguageEnvironment
                             myCommands.ParseCommands(line, lineNumber.ToString(), errorHandler);
                             lineNumber++;
                         }
+
+                        compiledCode = new List<String>();
              
                     }
 

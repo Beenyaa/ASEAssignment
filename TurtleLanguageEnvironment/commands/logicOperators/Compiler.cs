@@ -75,16 +75,29 @@ namespace TurtleLanguageEnvironment.commands.logicOperators
 						var.setOperation(parameter);
 						var.runEquation(split[2]);
 					}
+
+					for (int x = 0; x < (split.Length); x++)
+					{
+						// CALL VARIABLE VALUES
+						foreach (Variable var in variableList)
+						{
+							if (split[x] == var.GetName())
+							{
+								line = line.Replace(split[x], var.GetValue());
+								split[x] = var.GetValue();
+							}
+						}
+					}
 				}
 
 				// check syntax
 				if (methodFlag == false && executeLinesFlag == true) // Checks if the code is meant to be running or not
 				{
 
-					if (command == "function") // creates a function
+					if (command == "function") // creates a method
 					{
-						//HANDLE METHOD
-						functionList.Add((Method)logicCreator.createDef("function", parameter, (programCounter).ToString()));
+						//HANDLE METHODS
+						functionList.Add((Method)logicCreator.createMethod(parameter, (programCounter).ToString()));
 						methodFlag = true;
 					}
 					else if (command == "call")
@@ -102,7 +115,7 @@ namespace TurtleLanguageEnvironment.commands.logicOperators
 							methodCounter++;
 						}
 					}
-					else if (methodExecuting == true && command == "endfunction") // If a method is running, check for the end.
+					else if (methodExecuting == true && command == "endfunction") // If a method is running, check for the finish.
 					{
 						programCounter = saveProgramCounter;
 						methodExecuting = false;
@@ -113,7 +126,7 @@ namespace TurtleLanguageEnvironment.commands.logicOperators
 					else if (command == "var") //IF ITS A VARIABLE
 					{
 						// add stuf to check if variable exists
-						variableList.Add(logicCreator.createVar("variable", split[1], split[3]));
+						variableList.Add(logicCreator.createVarariable(split[1], split[3]));
 					}
 
 					// FOR LOOP LOGIC
@@ -143,9 +156,9 @@ namespace TurtleLanguageEnvironment.commands.logicOperators
 						loopFlag = true;
 						loopCounter = 0;
 						loopSize = 0;
-
-						string revPolish = split[2] + "," + split[3];
-						IfStatement tempIfWhile = (IfStatement)logicCreator.createIf("while", parameter, revPolish);
+						// uses if statement to loop around
+						string polishedParams = split[1] + "," + split[3];
+						IfStatement tempIfWhile = (IfStatement)logicCreator.createIfStatement(split[2], polishedParams);
 						bool temp = tempIfWhile.checkStatement();
 						if (!temp) // Checks if the if statement is false
 						{
@@ -169,8 +182,10 @@ namespace TurtleLanguageEnvironment.commands.logicOperators
 					// IF STATEMENT LOGIC
 					else if (command == "if")
 					{
-						string revPolish = split[2] + "," + split[3];
-						IfStatement tempIf = (IfStatement)logicCreator.createIf("if", parameter, revPolish);
+						string polishedParams = split[1] + "," + split[3];
+						Console.WriteLine(polishedParams);
+						Console.WriteLine(split[2]);
+						IfStatement tempIf = (IfStatement)logicCreator.createIfStatement(split[2], polishedParams);
 						bool temp = tempIf.checkStatement();
 						if (!temp) // Checks if the if statement is false
 						{
@@ -202,18 +217,6 @@ namespace TurtleLanguageEnvironment.commands.logicOperators
 
 				programCounter++;
 
-			}
-			for (int x = 0; x < (split.Length); x++)
-			{
-				// CALL VARIABLE VALUES
-				foreach (Variable var in variableList)
-				{
-					if (split[x] == var.GetName())
-					{
-						line = line.Replace(split[x], var.GetValue());
-						split[x] = var.GetValue();
-					}
-				}
 			}
 			return compiledCode;
 		}

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TurtleLanguageEnvironment.commands.logicOperators
 {
     /// <summary>
-    /// The class intended for variable creation
+    /// The class of a Variable
     /// </summary>
     class Variable
     {
@@ -15,45 +15,48 @@ namespace TurtleLanguageEnvironment.commands.logicOperators
         private string value;
         private string operation;
         /// <summary>
-        /// Gets the value
+        /// Gets the variable value
         /// </summary>
-        /// <returns>Returns the variables value</returns>
+        /// <returns>Returns the variable value</returns>
         public string GetValue()
         {
             return value;
         }
 
         /// <summary>
-        /// Sets the vairables value
+        /// Sets the vairable value
         /// </summary>
-        /// <param name="operand">The value to be stored in the variable</param>
-        public void SetValue(string operand)
+        /// <param name="tempValue">The value to be stored in the variable</param>
+        public void SetValue(string tempValue)
         {
-            value = operand;
+            value = tempValue;
         }
 
         /// <summary>
         /// Gets the name of the variable
         /// </summary>
-        /// <returns>Sets the variable</returns>
+        /// <returns>Gets the variable</returns>
         public string GetName()
         {
             return name;
         }
         /// <summary>
-        /// Sets the variables name
+        /// Sets the variable name
         /// </summary>
-        /// <param name="operand">The name for the variable. </param>
-        public void SetName(string operand)
+        /// <param name="tempName">The name for the variable. </param>
+        public void SetName(string tempName)
         {
-            name = operand;
+            name = tempName;
         }
 
         /// <summary>
         /// Sets the mathematical operation to be performed on the variable values
         /// </summary>
         /// <param name="op">Sets the mathematical operation (=, +=, -=)</param>
-        public void setOperation(string op) { operation = op; }
+        public void setOperation(string op)
+        {
+            operation = op;
+        }
         /// <summary>
         /// Runs the mathematical equation on the variable value
         /// </summary>

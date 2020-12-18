@@ -7,19 +7,18 @@ using System.Threading.Tasks;
 namespace TurtleLanguageEnvironment.commands
 {
     /// <summary>
-    /// A factory class for creating logic
+    /// Class to create the program logic
     /// </summary>
     class Factory
     {
         object returnLogic = null;
         /// <summary>
-        /// Intended to create an if statement
+        /// Creates a nw If Statement
         /// </summary>
-        /// <param name="logic">The type of logic to be peformed on the two values</param>
-        /// <param name="firstParam">the first value to be checked</param>
-        /// <param name="secondParam">The second value to be checked.</param>
+        /// <param name="firstParam">the first value, the logical operation</param>
+        /// <param name="secondParam">The second value, the polished integer values.</param>
         /// <returns></returns>
-        public logicOperators.IfStatement createIf(string logic, string firstParam, string secondParam)
+        public logicOperators.IfStatement createIfStatement(string firstParam, string secondParam)
         {
             logicOperators.IfStatement returnLogic = new logicOperators.IfStatement();
             returnLogic.setFirstValue(firstParam);
@@ -29,31 +28,29 @@ namespace TurtleLanguageEnvironment.commands
             return returnLogic;
         }
         /// <summary>
-        /// Intended to create a function
+        /// Creates a new Method
         /// </summary>
-        /// <param name="logic">The type of logic to be peformed on the two values</param>
-        /// <param name="firstParam">the first value to be checked</param>
-        /// <param name="secondParam">The second value to be checked.</param>
+        /// <param name="name">the first value, the name</param>
+        /// <param name="pointer">The second value, the pointer.</param>
         /// <returns></returns>
-        public logicOperators.Method createDef(string logic, string firstParam, string secondParam)
+        public logicOperators.Method createMethod(string name, string pointer)
         {
             logicOperators.Method returnLogic = new logicOperators.Method();
-            returnLogic.SetName(firstParam);
-            returnLogic.SetPointer(int.Parse(secondParam));
+            returnLogic.SetName(name);
+            returnLogic.SetPointer(int.Parse(pointer));
             return returnLogic;
         }
         /// <summary>
-        /// Intended to create a variable
+        /// Creates a new Variable
         /// </summary>
-        /// <param name="logic">The type of logic to be peformed on the two values</param>
-        /// <param name="firstParam">the first value to be checked</param>
-        /// <param name="secondParam">The second value to be checked.</param>
+        /// <param name="name">the first value, the name</param>
+        /// <param name="value">The second valu, the variable value.</param>
         /// <returns></returns>
-        public logicOperators.Variable createVar(string logic, string firstParam, string secondParam)
+        public logicOperators.Variable createVarariable(string name, string value)
         {
             logicOperators.Variable returnLogic = new logicOperators.Variable();
-            returnLogic.SetName(firstParam);
-            returnLogic.SetValue(secondParam);
+            returnLogic.SetName(name);
+            returnLogic.SetValue(value);
             return returnLogic;
         }
     }
